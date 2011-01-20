@@ -1,0 +1,8 @@
+﻿<Window x:Class="Playout.UI.AutoCloseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AutoCloseWindow" Height="240" Width="320" LostFocus="Window_LostFocus" Deactivated="Window_Deactivated" Topmost="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image x:Name="display"/>
+    </Grid>
+</Window>

@@ -1,0 +1,8 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\bin\Debug\WpfCap.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\bin\Debug\WpfCap.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\obj\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\obj\Debug\WpfCap.Properties.Resources.resources
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\obj\Debug\ResGen.read.1.tlog
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\obj\Debug\ResGen.write.1.tlog
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\obj\Debug\WpfCap.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\WpfCap\obj\Debug\WpfCap.pdb

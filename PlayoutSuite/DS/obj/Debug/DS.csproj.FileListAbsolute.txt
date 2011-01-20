@@ -1,0 +1,5 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\DS\bin\Debug\DS.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\DS\bin\Debug\DS.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\DS\obj\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\DS\obj\Debug\DS.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\DS\obj\Debug\DS.pdb

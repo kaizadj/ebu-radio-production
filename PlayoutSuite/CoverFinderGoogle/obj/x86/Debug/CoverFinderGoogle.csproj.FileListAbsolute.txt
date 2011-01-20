@@ -1,0 +1,13 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\bin\Debug\CoverFinderGoogle.exe
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\bin\Debug\CoverFinderGoogle.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\MainWindow.baml
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\MainWindow.g.cs
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\App.g.cs
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\CoverFinderGoogle_MarkupCompile.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\CoverFinderGoogle.g.resources
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\CoverFinderGoogle.Properties.Resources.resources
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\CoverFinderGoogle.exe
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\CoverFinderGoogle\obj\x86\Debug\CoverFinderGoogle.pdb

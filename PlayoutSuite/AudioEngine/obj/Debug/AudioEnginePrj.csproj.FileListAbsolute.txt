@@ -1,0 +1,7 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\bin\Debug\AudioEngine.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\bin\Debug\AudioEngine.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\bin\Debug\Bass.Net.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\bin\Debug\Bass.Net.xml
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\obj\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\obj\Debug\AudioEngine.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\AudioEngine\obj\Debug\AudioEngine.pdb
