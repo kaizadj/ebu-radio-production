@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les diff�rents objets sont affich�s dans l'ordre des balises, premi�re balise => arri�re plan, derni�re balise => premier plan-->
+    
+    <!-- BackGround -->
+    <background color="#336699" top="0" left="0"/>
+    <!-- si l'image n'est pas trouvé affiche du gris -->
+
+    <text content="TRAFFIC INFO" font-color="#FFFFFF"  left="0" bottom="-10" font-size="48" font-style="bold" opacity="20"/>
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\bg.jpg" top="0" left="0" width="320" opacity="50"/>
+
+    <template id="header-littlelogo"></template>
+
+    
+    <text content="direction Genève" font-color="#FFFFFF" left="5" top="45"/>
+    <text content="direction Lausanne" font-color="#FFFFFF"  left="165" top="45"/>
+    <img src="http://160.53.186.12/generated/CAM_10.jpg" width="150" right="5" top="60"/>
+    <img src="http://160.53.186.12/generated/CAM_9.jpg" width="150" left="5" top="60"/>
+
+
+
+    <text content="A1: Tunnel de Vernier" font-color="#FFFFFF"  left="5" bottom="35" font-size="18"/>
+    <text content="@@@SHORTDATE@@@ @@@SHORTTIME@@@" top="3" left="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="50"/>
+    
+<!--
+      <template id="footer-background"/>
+      <text content="Until 9am : Breakfast Show" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+      <text content="Next: 8:30 -> World News" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+      <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+      <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+-->
+
+
+  </slide>
+</sequence>

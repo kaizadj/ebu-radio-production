@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les différents objets sont affichés dans l'ordre des balises, première balise => arrière plan, dernière balise => premier plan-->
+    
+    <!-- FOND -->
+    <background color="#EEEEEE" top="0" left="0"/> <!-- si l'image n'est pas trouvé affiche du gris -->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\studio-radio.PNG" top="-30" left="-100" opacity="90"/> <!-- image du studio -->
+    
+    <!-- EN-TETE -->
+    <background color="#FF3333" top="0" left="0" height="30" opacity="70"/> <!-- fond transparent du haut -->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\ebu-logo.png" top="0" right="0" width="100" opacity="100"/> <!-- logo EBU -->
+    <!-- TEXT -->
+    <text content="@@@STATIONNAME@@@" top="0" left="3" font-color="#FFFFAA" font-size="20" font-style="bold italic" opacity="100"/>
+    <text content="@@@STATIONWEB@@@" top="0" right="40" font-color="#FFFFFF" font-size="10" font-style="bold"/>
+
+    <!-- PIED DE PAGE -->
+    <background color="#FF3333" bottom="0" left="0" height="40" opacity="70"/> <!-- fond transparent du bas -->
+    <text content="@@@CURRENTSHOW@@@" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+    <text content="ONAIR: @@@NOWPLAYING@@@" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+    <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    
+  </slide>
+</sequence>

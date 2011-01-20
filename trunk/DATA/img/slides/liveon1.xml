@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les diff�rents objets sont affich�s dans l'ordre des balises, premi�re balise => arri�re plan, derni�re balise => premier plan-->
+    
+    <!-- BackGround -->
+    <background color="#FFFF00" top="0" left="0"/>
+    <!-- si l'image n'est pas trouvé affiche du gris -->
+
+    
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\bg-clair.jpg" top="0" left="0" width="320" opacity="60"/>
+	<background color="#FF9900" top="0" left="0" opacity="70"/>
+	<text content="LIVE" font-color="#FFFFFF"  left="-6" bottom="-20" font-size="78" font-style="bold" opacity="20"/>
+	
+	
+	
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\ebu-logo.png" top="0" right="0" width="70" opacity="100"/>
+    <!-- logo EBU -->
+    <text content="@@@STATIONNAME@@@" top="0" right="72" font-color="#EEEEEE" font-size="25" font-style="bold" opacity="100"/>
+    <text content="@@@STATIONWEB@@@" top="25" right="75" font-color="#FFFFFF" font-size="16" font-style="italic"/>
+
+    
+
+
+	<background width="190" height="30" top="120" color="#FF9900" opacity="60"/>
+	<background width="190" height="30" top="150" right="0" color="#FF9900" opacity="60"/>
+    <text content="LIVE ON" font-color="#FFFFFF"  left="13" top="78" font-size="30" font-style="bold"/>
+	<text content="DAB: ch. 10A" font-color="#FFFFFF"  left="13" top="114" font-size="30" />
+	
+	<text content="FM: 97.3" font-color="#FFFFFF"  right="13" top="144" font-size="30" />
+    
+    
+<!--
+      <template id="footer-background"/>
+      <text content="Until 9am : Breakfast Show" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+      <text content="Next: 8:30 -> World News" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+      <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+      <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+-->
+
+
+  </slide>
+</sequence>

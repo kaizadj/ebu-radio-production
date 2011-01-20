@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template id="background-red">
+      <!-- Background-->
+      <background color="#EE0000" top="0" left="0"/> <!-- si l'image n'est pas trouvé affiche du gris -->
+      <img src="D:\HYBRIDDEMO\DATA\img\Pictures\bg.jpg" top="0" left="0" width="320" opacity="50"/>
+  </template>
+  <template id="background-dark">
+    <!-- Background-->
+    <background color="#000080" top="0" left="0"/>
+    <!-- si l'image n'est pas trouvé affiche du gris -->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\bg.jpg" top="0" left="0" width="320" opacity="50"/>
+  </template>
+  <template id="header-littlelogo">
+    <!-- fond transparent du haut -->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\ebu-logo.png" top="0" right="0" width="30" opacity="100"/>
+    <!-- logo EBU -->
+    <text content="@@@STATIONNAME@@@" top="0" right="32" font-color="#EEEEEE" font-size="17" font-style="bold" opacity="70"/>
+    <text content="@@@STATIONWEB@@@" top="17" right="35" font-color="#FFFFFF" font-size="10" font-style="italic"/>
+  </template>
+  
+  <template id="header-biglogo">
+    <background color="#FF0000" top="0" left="0" height="30" opacity="50"/> <!-- fond transparent du haut -->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\ebu-logo.png" top="0" right="0" width="100" opacity="100"/> <!-- logo EBU -->
+    <text content="@@@STATIONNAME@@@" top="0" left="3" font-color="#FFFFAA" font-size="20" font-style="bold italic" opacity="100"/>
+    <text content="@@@STATIONWEB@@@" top="0" right="40" font-color="#FFFFFF" font-size="10" font-style="bold"/>
+  </template>
+
+  <template id="footer-background">
+    <background color="#FF0000" bottom="0" left="0" height="40" opacity="30"/> <!-- fond transparent du bas -->
+  </template>
+
+  <template id="footer-currentshow">
+    <template id="footer-background"/>
+    <text content="Until 9am : Breakfast Show" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+    <text content="Next: 8:30 -> World News" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+    <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+  </template>
+
+  <template id="footer-currentsong">
+    <template id="footer-background"/>
+    <text content="ON STAGE SHOW" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+    <text content="ONAIR: U2 - Vertigo" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+    <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+  </template>
+
+  <template id="footer-liveshow-footer">
+    <text content="LIVE FROM DUBLIN STADIUM" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+    <text content="ONAIR: U2 - Vertigo" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+    <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+  </template>
+  
+  <template id="footer-webcam">
+	<!--<background color="#000080" bottom="20" height="22" opacity="30"/>-->
+	<background color="#000080" bottom="0" height="42" opacity="30"/>
+    <text content="@@@SHORTDATE@@@" bottom="3" left="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="50"/>
+    <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="50"/>
+	<text content="@@@WEBCAMTXT@@@" bottom="19" left="4" font-color="#000000" font-size="18"/>
+  	<text content="@@@WEBCAMTXT@@@" bottom="20" left="3" font-color="#FFFFFF" font-size="18"/>
+  </template>
+  
+  <!-- Core -->
+  <template id="core-onairsong">
+    <img src="D:\HYBRIDDEMO\DATA\img\covers\@@@CURRENTPIC1@@@" top="40" left="10" width="150" opacity="100"/>
+    <text content="Now playing" top="100" left="170" font-style="italic" font-size="15" font-color="#FF9999"/>
+    <text content="@@@CURRENTARTIST@@@\n@@@CURRENTSONG@@@" top="120" left="170" font-style="bold" font-size="15" font-color="#DDFFDD"/>
+  </template>
+</templates>

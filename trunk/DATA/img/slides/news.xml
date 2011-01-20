@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <background color="#EEEEEE" top="0" left="0"/>
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\studio-radio.PNG" top="-30" left="-100" opacity="90"/>
+    <background color="#FF3333" bottom="0" left="0" height="40" opacity="70"/>
+    <background color="#FF3333" top="0" left="0" height="30" opacity="70"/>
+    <!--<background color="#FFFFFF" top="0" right="0" height="100" width="100" opacity="30"/>-->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\ebu-logo.png" top="0" right="0" width="100" opacity="100"/>
+    <!--<text content="ONAIR: EDWARD MAYA - STEREO LOVE" bottom="50" right="100"/>
+    <text content="@@@HEADER@@@" left="0" font-size="20" font-family="Arial"/>
+    <text content="@@@HEADER@@@ \ncoucou" left="0" top="30" font-size="20" font-family="Attic"/>
+    <text content=": @@@DATE@@@ @@@TIME@@@" top="150" left="0" width="320" font-color="#00AA00" text-align="right"/>-->
+
+    <text content="@@@STATIONNAME@@@" top="0" left="3" font-color="#FFFFAA" font-size="20" font-style="bold italic" opacity="100"/>
+    <text content="@@@STATIONWEB@@@" top="0" right="40" font-color="#FFFFFF" font-size="10" font-style="bold"/>
+    <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+    
+  </slide>
+</sequence>
