@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<conf tmpfolder="D:\HYBRIDDEMO\DATA\img\tmp\">
+ <render width="320" height="240">
+    <output type="local" path="slide.png"/>
+  </render>
+  <includes>
+    <template src="D:\HYBRIDDEMO\DATA\img\templates\templates.xml"/>
+	<slidefolder src="D:\HYBRIDDEMO\DATA\img\slides"/>
+  </includes>
+  <export>
+	<ftp address="ftp://ftpserver.com:21" login="ftpuser" password="1234" folder=""/>
+	<local path="\\192.168.1.131\IBCPlayout\DATA\img\WATCHFOLDER\"/>
+	<stomp address="radiodns1.ebu.ch:8001"/>
+  </export>
+  <constants>
+    <stationname>EBU RADIO</stationname>
+    <stationweb>tech.ebu.ch</stationweb>
+    <currentshow>MORNING SHOW</currentshow>
+    <currentsong>Waka waka</currentsong>
+    <webcampic>\\192.168.1.131\IBCPlayout\DATA\tmp\webcam.jpg</webcampic>
+    <webcamtxt>COUCOU</webcamtxt>
+    <currentartist>Shakira</currentartist>
+    <nowplaying>@@@CURRENTARTIST@@@ - @@@CURRENTSONG@@@</nowplaying>
+    <header>@@@STATIONNAME@@@ - @@@STATIONWEB@@@   @@@DATE@@@ @@@TIME@@@</header>
+  </constants>
+  
+</conf>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les diff�rents objets sont affich�s dans l'ordre des balises, premi�re balise => arri�re plan, derni�re balise => premier plan-->
+    
+    <!-- FOND -->
+    <template id="background-dark"/>
+
+    <!--core-->
+    <img src="@@@WEBCAMPIC@@@" top="0" left="0" width="320" opacity="100"/>
+
+
+    <!-- EN-TETE -->
+    <template id="header-littlelogo"></template>
+    
+   
+
+    <!-- PIED DE PAGE -->
+    <template id="footer-webcam"/>
+      
+  </slide>
+</sequence>

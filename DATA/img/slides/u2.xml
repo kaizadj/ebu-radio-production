@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les différents objets sont affichés dans l'ordre des balises, première balise => arrière plan, dernière balise => premier plan-->
+    
+    <!-- FOND -->
+    <template id="background-dark"/>
+
+    <!--core-->
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\u2.jpg" top="0" left="0" width="320" opacity="100"/>
+
+
+    <!-- EN-TETE -->
+    <template id="header-littlelogo"></template>
+    
+   
+
+    <!-- PIED DE PAGE -->
+    <template id="footer-liveshow-footer"/>
+      
+  </slide>
+</sequence>

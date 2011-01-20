@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les différents objets sont affichés dans l'ordre des balises, première balise => arrière plan, dernière balise => premier plan-->
+    
+    <!-- BackGround -->
+    <template id="background-red"/>
+
+   
+    <!-- EN-TETE -->
+    <template id="header-biglogo"></template>
+
+
+    <template id="core-onairsong"/>
+
+    <!-- PIED DE PAGE -->
+    <template id="footer-currentshow"/>
+
+<!--
+      <template id="footer-background"/>
+      <text content="Until 9am : Breakfast Show" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+      <text content="Next: 8:30 -> World News" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+      <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+      <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+-->
+
+
+  </slide>
+</sequence>

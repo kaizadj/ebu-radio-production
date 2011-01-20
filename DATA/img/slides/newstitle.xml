@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+    <!-- Les diff�rents objets sont affich�s dans l'ordre des balises, premi�re balise => arri�re plan, derni�re balise => premier plan-->
+    
+    <!-- BackGround -->
+    <background color="#336699" top="0" left="0"/>
+    <!-- si l'image n'est pas trouvé affiche du gris -->
+
+    
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\bg-bleu.jpg" top="0" left="0" width="320" opacity="100"/>
+	<background width="320" height="40" top="100" color="#000080" opacity="60"/>
+	<text content="NEWS" font-color="#FFFFFF"  left="-6" bottom="-20" font-size="78" font-style="bold" opacity="20"/>
+	
+	
+	
+    <img src="D:\HYBRIDDEMO\DATA\img\Pictures\ebu-logo.png" top="0" right="0" width="70" opacity="100"/>
+    <!-- logo EBU -->
+    <text content="@@@STATIONNAME@@@" top="0" right="72" font-color="#EEEEEE" font-size="25" font-style="bold" opacity="70"/>
+    <text content="@@@STATIONWEB@@@" top="25" right="75" font-color="#FFFFFF" font-size="16" font-style="italic"/>
+
+    
+
+
+    <text content="BREAKING NEWS" font-color="#FFFFFF"  left="43" top="98" font-size="30" />
+    <text content="@@@SHORTDATE@@@ @@@SHORTTIME@@@" top="140" right="3" font-color="#DDDDDD" font-size="12" font-style="bold" opacity="80"/>
+    
+<!--
+      <template id="footer-background"/>
+      <text content="Until 9am : Breakfast Show" bottom="20" left="3" font-color="#FFFFFF" font-size="13" font-style="bold" opacity="100"/>
+      <text content="Next: 8:30 -> World News" bottom="3" left="3" font-color="#FFFFFF" font-size="12" opacity="100"/>
+      <text content="@@@SHORTDATE@@@" bottom="20" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+      <text content="@@@SHORTTIME@@@" bottom="3" right="3" font-color="#FFFF00" font-size="12" font-style="bold" opacity="100"/>
+-->
+
+
+  </slide>
+</sequence>
