@@ -1,0 +1,5 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\ContentServiceLibrary\bin\Debug\ContentServiceLibrary.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\ContentServiceLibrary\bin\Debug\ContentServiceLibrary.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\ContentServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\ContentServiceLibrary\obj\Debug\ContentServiceLibrary.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\ContentServiceLibrary\obj\Debug\ContentServiceLibrary.pdb

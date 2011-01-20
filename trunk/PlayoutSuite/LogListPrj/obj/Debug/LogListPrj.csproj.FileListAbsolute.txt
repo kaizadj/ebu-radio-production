@@ -1,0 +1,7 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\obj\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\bin\Debug\LogListPrj.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\bin\Debug\LogListPrj.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\bin\Debug\DS.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\bin\Debug\DS.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\obj\Debug\LogListPrj.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\LogListPrj\obj\Debug\LogListPrj.pdb

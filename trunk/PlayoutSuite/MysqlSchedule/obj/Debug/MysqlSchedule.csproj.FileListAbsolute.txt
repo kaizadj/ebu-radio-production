@@ -1,0 +1,9 @@
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\obj\Debug\ResolveAssemblyReference.cache
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\bin\Debug\MysqlSchedule.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\bin\Debug\MysqlSchedule.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\bin\Debug\DS.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\bin\Debug\LogListPrj.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\bin\Debug\DS.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\bin\Debug\LogListPrj.pdb
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\obj\Debug\MysqlSchedule.dll
+D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\MysqlSchedule\obj\Debug\MysqlSchedule.pdb

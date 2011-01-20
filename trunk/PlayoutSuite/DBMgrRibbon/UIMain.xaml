@@ -1,0 +1,294 @@
+﻿<ribbon:RibbonWindow x:Class="DBMgrRibbon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+        xmlns:my="clr-namespace:DBMgrRibbon"
+        Title="MainWindow"
+		x:Name="This"
+		Width="841" Height="480" Closing="This_Closing" WindowStyle="ThreeDBorderWindow">
+    <ribbon:RibbonWindow.Resources>
+       <my:CellValueColorConverter x:Key="colorConverter"/>
+        <my:CellStringConverter x:Key="stringConverter" />
+        <my:CellTimeConverter x:Key="timeConverter" />
+        <my:GapSchedConverter x:Key="gapSchedConverter" />
+        <my:RowBackgroundConverter x:Key="rowBackGroundColorConverter" />
+        <my:RowForegroundConverter x:Key="rowForeGroundColorConverter" />
+    </ribbon:RibbonWindow.Resources>
+    <ribbon:RibbonWindow.TaskbarItemInfo>
+        <TaskbarItemInfo />
+    </ribbon:RibbonWindow.TaskbarItemInfo>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="284*"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="632*"/>
+        </Grid.ColumnDefinitions>
+        
+
+        <ribbon:Ribbon x:Name="Ribbon" UseLayoutRounding="True" BorderBrush="#FFA7A7A7" Background="#FFBDBDBD" SelectedIndex="1" Grid.Row="0" Grid.ColumnSpan="2" SelectionChanged="Ribbon_SelectionChanged">
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu SmallImageSource="Images\SmallIcon.png" IsMainMenu="True" IsDropDownOpen="False" Background="#FF929BA0" BorderBrush="Maroon">
+                    <ribbon:RibbonApplicationMenuItem Header="Hello _Ribbon"
+                                                      x:Name="MenuItem1"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="New">
+                        <ribbon:RibbonApplicationMenuItemLevel/>
+                            <ribbon:RibbonApplicationMenuItem Header="coucou"/>
+                        
+                    </ribbon:RibbonApplicationMenuItem>
+                    
+                    <ribbon:RibbonApplicationMenuItem Header="Save"/>
+                    <ribbon:RibbonApplicationMenuItem Header="Close"/>
+                </ribbon:RibbonApplicationMenu>
+            </ribbon:Ribbon.ApplicationMenu>
+            <ribbon:RibbonTab x:Name="HomeTab" 
+                              Header="Home">
+                <ribbon:RibbonGroup x:Name="Group1" 
+                                    Header="Group1">
+                    <ribbon:RibbonButton x:Name="Button1"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="Test1"/>
+
+                    <ribbon:RibbonButton x:Name="Button2"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="Button2" />
+                    <ribbon:RibbonButton x:Name="Button3"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="Button3" />
+                    <ribbon:RibbonButton x:Name="Button4"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="Button4" />
+                    
+                </ribbon:RibbonGroup>
+
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab Header="Slice">
+                <ribbon:RibbonGroup>
+                    <StackPanel>
+                        <Label Content="New Slice:"/>
+                        <ribbon:RibbonTextBox x:Name="newSliceName"/>
+                        <ribbon:RibbonButton Label="create" Click="newSliceBtnClick"/>
+                    </StackPanel>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup>
+                    <ribbon:RibbonButton Label="Add new item"  x:Name="addCanvasSliceItemBtn" LargeImageSource="Images/circle-plus.png" Click="newCanvasSliceItem"/>
+                    <ribbon:RibbonButton Label="Move up selected item" x:Name="moveSlotUpBtn" LargeImageSource="Images/arrow-up.png" Click="moveUpCanvasSliceItem"/>
+                    <ribbon:RibbonButton Label="Move down selected item" x:Name="moveSlotDownBtn" LargeImageSource="Images/arrow-down.png" Click="moveDownCanvasSliceItem"/>
+                    <ribbon:RibbonButton Label="Remove selected item"  x:Name="removeCanvasSliceItemBtn" LargeImageSource="Images/circle-minus.png" Click="removeCanvasSliceItem"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab Header="Songitem">
+                <ribbon:RibbonGroup>
+                </ribbon:RibbonGroup>
+                
+                <ribbon:RibbonGroup Header="details">
+                    <StackPanel>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Artist"/>
+                            <TextBox Grid.Column="1" Width="250" x:Name="in_artist" Text="{Binding ElementName=grid, Path=SelectedValue.data.artist, Mode=TwoWay}"/>
+                        </Grid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Title"/>
+                            <TextBox Grid.Column="1" Width="250" x:Name="in_title" Text="{Binding ElementName=grid, Path=SelectedValue.data.title, Mode=TwoWay}"/>
+                        </Grid>
+                    
+                    </StackPanel>
+                    
+                </ribbon:RibbonGroup>
+
+                <ribbon:RibbonGroup Header="classification">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="55"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Category"/>
+                        <ComboBox Grid.Column="1" Width="150" x:Name="in_category"  SelectedValue="{Binding ElementName=grid, Path=SelectedValue.data.category, Mode=OneWay}" IsSynchronizedWithCurrentItem="{x:Null}" IsEditable="False" SelectionChanged="in_category_SelectionChanged" />
+                        
+                        
+                    </Grid>
+                    
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="audio">
+                    
+                        <ribbon:RibbonButton Label="Play"/>
+                        <ribbon:RibbonButton Label="Stop"/>
+                    
+                </ribbon:RibbonGroup>
+
+                <ribbon:RibbonGroup Header="">
+                    <ribbon:RibbonButton Label="Save" LargeImageSource="/DBMgrRibbon;component/Images/circle-check.png" Click="RibbonButton_Click_Save"/>
+                    <ribbon:RibbonButton Label="Cancel"  LargeImageSource="Images/circle-delete.png" Click="RibbonButton_Click_Cancel"/>
+                </ribbon:RibbonGroup>    
+            </ribbon:RibbonTab>
+        </ribbon:Ribbon>
+        
+        <TreeView Grid.Row="1" Grid.Column="0" x:Name="libraryTree">
+            <TreeViewItem Header="Select a mode below">
+                
+            </TreeViewItem>
+
+        </TreeView>
+        <Calendar Grid.Row="1" Grid.Column="0" x:Name="scheduleCalendar" SelectedDatesChanged="scheduleCalendar_SelectedDatesChanged" />
+        <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom">
+            <ToggleButton x:Name="tb1" Content="Library" Height="30" IsChecked="False" Checked="ToggleButton_Checked"/>
+            <ToggleButton x:Name="tb2" Content="Canvas" Height="30" IsChecked="False" Checked="ToggleButton_Checked"/>
+            <ToggleButton x:Name="tb3" Content="Schedule" Height="30" IsChecked="False" Checked="ToggleButton_Checked"/>
+        </StackPanel>
+
+        <DataGrid x:Name="grid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" FrozenColumnCount="3" ItemsSource="{Binding ElementName=This, Path=UIData, Mode=TwoWay}" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="grid_SelectionChanged" MouseRightButtonDown="GridRightBtnDown" KeyDown="grid_KeyDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding data.ID}" Header="id"/>
+                <DataGridTextColumn Binding="{Binding data.label}" Header="label"/>
+                <DataGridTextColumn Binding="{Binding data.runtime}" Header="runtime"/>
+                <DataGridTextColumn Binding="{Binding data.category}" Header="category"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid AutoGenerateColumns="False" Name="loggrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"  IsSynchronizedWithCurrentItem="True" IsReadOnly="False" UseLayoutRounding="False" >
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <MultiBinding Converter="{StaticResource rowBackGroundColorConverter}">
+                                <Binding Path="type" />
+                                <Binding Path="slot" />
+                                <Binding Path="slot.status" />
+                                <Binding Path="slot.fillsong" />
+                                <Binding Path="slot.cutsong" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground">
+                        <Setter.Value>
+                            <MultiBinding Converter="{StaticResource rowForeGroundColorConverter}">
+                                <Binding Path="type" />
+                                <Binding Path="slot" />
+                                <Binding Path="slot.status" />
+                                <Binding Path="slot.fillsong" />
+                                <Binding Path="slot.cutsong" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Blue"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+
+                    </Style.Triggers>
+
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <!-- STATUS -->
+                <DataGridTemplateColumn Header="Status" MinWidth="100">
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <StackPanel  Orientation="Horizontal" Margin="20,0,0,0">
+                                <Rectangle Name="rect" Width="10" Height="10">
+                                    <Rectangle.Fill>
+                                        <MultiBinding Converter="{StaticResource colorConverter}" Mode="TwoWay">
+                                            <Binding Path="slot" />
+                                            <Binding Path="slot.status" />
+                                            <Binding Path="slice" />
+                                            <Binding Path="slice.status" />
+                                        </MultiBinding>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+
+                                <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource stringConverter}">
+                                    <Binding Path="slot" />
+                                    <Binding Path="slot.status" />
+                                    <Binding Path="slice" />
+                                    <Binding Path="slice.status" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                                </TextBlock>
+
+                            </StackPanel>
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+                <!-- Air DateTime -->
+                <DataGridTextColumn Header="AirDT">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource timeConverter}">
+                            <Binding Path="slot" />
+                            <Binding Path="slot.airdatetime" StringFormat="d" />
+                            <Binding Path="slice" />
+                            <Binding Path="slice.airdatetime" StringFormat="d" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <!-- GAP/SCHEDULED DATE -->
+                <DataGridTextColumn Header="gap / scheduled">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource gapSchedConverter}">
+                            <Binding Path="slice.Previous"/>
+                            <Binding Path="slice.Previous.gaptonextslice" />
+                            <Binding Path="slice.Previous.airgaptonextslice" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <!-- Runtime -->
+                <DataGridTextColumn Header="runtime">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource timeConverter}">
+                            <Binding Path="slot" />
+                            <Binding Path="slot.runtime" />
+                            <Binding Path="slice" />
+                            <Binding Path="slice.runtime" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <!-- Label -->
+                <DataGridTextColumn Header="Label">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource stringConverter}">
+                            <Binding Path="slot" />
+                            <Binding Path="slot.item.label" />
+                            <Binding Path="slice" />
+                            <Binding Path="slice.label" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <!-- Type -->
+                <DataGridTextColumn Binding="{Binding type}" Header="Type" />
+                <!-- filename -->
+                <DataGridTextColumn Binding="{Binding filename}" Header="FileName" />
+                <!--<DataGridComboBoxColumn x:Name="_PublisherCombo" Header="Publisher" SelectedItemBinding="{Binding Publisher}" />-->
+                <!-- <DataGridCheckBoxColumn Binding="{Binding On Xbox}" Header="On Xbox 360" />-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <ProgressBar x:Name="ProgressBar" Grid.Column="1" Grid.Row="1" Margin="100,167,100,0" Height="33" VerticalAlignment="Top" Maximum="100" Visibility="Hidden"/>
+    </Grid>
+
+</ribbon:RibbonWindow>
