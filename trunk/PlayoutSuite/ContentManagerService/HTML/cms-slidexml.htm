@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <style type="text/css">
+        .style1
+        {
+            margin-top: 19px;
+        }
+        .style2
+        {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        Content Manager Service (CMS)</h1>
+    <h2>
+        Slides Canvas</h2>
+    <p class="style1">
+        A slide is the source file of a final picture which is send to receivers.
+        <br />
+        It gathers several components:</p>
+    <ul>
+        <li>
+            <p class="style1">
+                the text associated to the image (for receivers which display only text)</p>
+        </li>
+        <li>
+            <p class="style1">
+                the link (url)</p>
+        </li>
+        <li>
+            <p class="style1">
+                the canvas of the image</p>
+        </li>
+    </ul>
+    <p class="style1">
+        All these informations are stored in an xml file. The name of the file is the 
+        name of the slide and must be saved in the folder:</p>
+    <pre> %DataFolder%\img\slides\</pre>
+    <p class="style1">
+        DataFolder is defined in <em>config file.</em></p>
+    <h3>
+        Structures</h3>
+    <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;sequence&gt;&lt;slide link=&quot;&quot;&gt;your tags&lt;/slide&gt;&lt;/sequence&gt;</pre>
+    <p>
+        The parameter <em>link</em> is the link of the slide which is send across 
+        RadioVIS. If it is empty, the slide is sent with the link specified in <em>
+        config file</em> as <em>radiovislink.</em></p>
+    <h3>
+        Tags</h3>
+    <h4 class="style2">
+        Rectangle</h4>
+    <pre class="style2">&lt;background&gt;</pre>
+    <p class="style2">
+        Possible parameters: top, left, right, bottom, width, height, color, opacity.</p>
+    <p class="style2">
+        position and size: in pixels<br />
+        colors : fill color of the rectangle<br />
+        opacity: 0 to 100</p>
+    <p class="style2">
+        &nbsp;</p>
+    <h4 class="style2">
+        Image</h4>
+    <pre class="style2">&lt;img&gt;</pre>
+    <p class="style2">
+        Possible parameters: top, left, right, bottom, width, height, src, 
+        opacity.</p>
+    <p class="style2">
+        position and size: in pixels<br />
+        src : Can be a filename or an url.&nbsp; 
+        It may contain variable &quot;@@@ONAIR_PIC@@@&quot;<br />
+        opacity: 0 to 100</p>
+    <p class="style2">
+        &nbsp;</p>
+    <h4 class="style2">
+        Random Imagendom Image</h4>
+    <pre class="style2">&lt;imgrdm&gt;</pre>
+    <p class="style2">
+        Possible parameters: top, left, right, bottom, width, height, folder, 
+        opacity.</p>
+    <p class="style2">
+        position and size: in pixels<br />
+        folder: Path to the folder which contains the pictures to randomly select.<br />
+        opacity: 0 to 100</p>
+    <h4 class="style2">
+        &nbsp;</h4>
+    <h4 class="style2">Text</h4>
+    <pre class="style2">&lt;text&gt;</pre>
+    <pre class="style2">&lt;text content=&quot;@@@STATIONNAME@@@&quot; top=&quot;0&quot; right=&quot;32&quot; font-color=&quot;#EEEEEE&quot; font-size=&quot;17&quot; font-style=&quot;bold&quot; opacity=&quot;70&quot;/&gt;</pre>
+    <p class="style2">
+        Possible parameters: top, left, right, bottom, width, height, opacity, 
+        font-color, font-size, font-style, font-family, text-align, content.</p>
+    <p class="style2">
+        position and size: in pixels<br />
+        opacity: 0 to 100<br />
+        font-color: text color<br />
+        font-size: in pixels<br />
+        font-style: underline, bold, italic separated by semicolon.<br />
+        text-align: left, right, center<br />
+        content: Text (it may contain variables) ie: &quot;ON AIR: @@@ONAIR_SONG@@@&quot;</p>
+    <p class="style2">
+        &nbsp;</p>
+    <h4 class="style2">
+        Template">
+        Template</h4>
+    <pre class="style2">&lt;template id=&quot;&quot;/&gt;</pre>
+    <p class="style2">
+        Generates the elements of the template. See <em>template file</em> to create a 
+        template.</p>
+    <p>
+        &nbsp;</p>
+           <div style="float:left;margin:5px;">
+    <img src="http://radiodns1.ebu.ch/radiovismanager/img/ebulogo.png" 
+        style="width: 60px; height: 52px;" /></div>  <address>EBU Innovation & Technology, 2011<br />
+                EBU Radio Production Platform<br /><a href="http://www.ebulabs.org/">ebulabs.org</a></address>
+    
+</body>
+</html>

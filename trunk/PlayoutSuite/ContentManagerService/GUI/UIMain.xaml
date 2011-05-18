@@ -1,7 +1,7 @@
-﻿<Window x:Class="ContentManagerService.MainWindow"
+﻿<Window x:Class="ContentManagerService.GUI.UIMain"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Content Manager" Height="567" Width="816" Closed="Window_Closed">
+        Title="Content Manager" Height="567" Width="816" Closed="Window_Closed" Topmost="True">
     <Window.Resources>
         <!--Inlay where banner text sits-->
         <Style x:Key="BannerInlay" TargetType="{x:Type Rectangle}">
@@ -38,7 +38,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-<!--Text displayed in the banner-->
+        <!--Text displayed in the banner-->
         <Style x:Key="BannerInlayTextOA" TargetType="{x:Type TextBlock}">
             <Setter Property="FontSize" Value="20" />
             <Setter Property="FontWeight" Value="Bold" />
@@ -58,9 +58,9 @@
             <RowDefinition Height="60*" />
             <RowDefinition Height="60*" />
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="1" Height="23" Name="textBox1" Width="120" Margin="48,31,0,32" HorizontalAlignment="Left" Text="traffic"/>
-        <Button Grid.Row="1" Content="Preview" Height="23" Name="button1" Margin="205,31,0,32" Click="button1_Click" HorizontalAlignment="Left" Width="66" />
-        <Button Grid.Row="1" Content="Show Variables" Margin="0,23,24,24" HorizontalAlignment="Right" Width="102" Click="Button_Click" />
+        <TextBox Grid.Row="1" Height="23" Name="textBox1" Width="120" Margin="507,8,0,57" HorizontalAlignment="Left" Text="traffic"/>
+        <Button Grid.Row="1" Content="Preview" Height="23" Name="button1" Margin="633,8,0,56" Click="button1_Click" HorizontalAlignment="Left" Width="66" />
+        <Button Grid.Row="1" Content="Show Variables" Margin="0,8,412,39" HorizontalAlignment="Right" Width="102" Click="Button_Click" />
         <Grid Grid.Row="0" Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
@@ -70,19 +70,22 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="385*" />
             </Grid.RowDefinitions>
-            <Rectangle Fill="{x:Null}" Grid.RowSpan="2" Margin="9,0,6,0" RadiusX="20" RadiusY="20" Stretch="Fill" Stroke="#FF00B1FF" StrokeThickness="2" Grid.Column="1" />
-            <Rectangle Fill="{x:Null}" Margin="8,0,7,0" RadiusX="20" RadiusY="20" Stretch="Fill" Stroke="#FF00B1FF" StrokeThickness="2" Grid.RowSpan="2" />
+            <Rectangle Fill="{x:Null}" Margin="11,0,4,0" RadiusX="20" RadiusY="20" Stretch="Fill" Stroke="#FF00B1FF" StrokeThickness="2" Grid.RowSpan="2" Grid.Column="1" />
             <Rectangle Fill="{x:Null}" Grid.RowSpan="2" Margin="8,0,7,373" RadiusX="20" RadiusY="20" Stretch="Fill" Stroke="#FF00B1FF" StrokeThickness="2" />
-            
-            <TextBlock HorizontalAlignment="Left" Margin="28,6,0,0" Style="{StaticResource BannerInlayText}" Text="Preview" Width="394" Height="32" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" />
-            <StackPanel x:Name="panel2" Grid.Column="1" Grid.Row="1" Width="320" Margin="28,16,28,0" Height="240" VerticalAlignment="Top">
-            </StackPanel>
-            <StackPanel x:Name="panel" Grid.Row="1" Width="320" Height="240" Margin="10,16,10,0" VerticalAlignment="Top">
+
+            <TextBlock HorizontalAlignment="Left" Margin="31,6,0,0" Style="{StaticResource BannerInlayText}" Text="Preview" Width="394" Height="32" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="1" />
+            <StackPanel x:Name="panel" Grid.Row="1" Width="320" Height="240" Margin="31,16,26,0" VerticalAlignment="Top" Grid.Column="1">
             </StackPanel>
             <Rectangle Fill="{x:Null}" Margin="9,0,6,373" RadiusX="20" RadiusY="20" Stretch="Fill" Stroke="#FF00B1FF" StrokeThickness="2" Grid.Column="1" Grid.RowSpan="2" />
-            <TextBlock Height="32" HorizontalAlignment="Left" Margin="29,6,0,0" Style="{StaticResource BannerInlayTextOA}" Text="ON AIR" VerticalAlignment="Top" Width="394" Grid.Column="1" Grid.RowSpan="2" />
-            
+            <Rectangle Fill="{x:Null}" Grid.RowSpan="2" Margin="0,0,15,0" RadiusX="20" RadiusY="20" Stretch="Fill" Stroke="#FF00B1FF" StrokeThickness="2" />
+            <StackPanel x:Name="panel2" Width="320" Margin="20,16,37,0" Height="240" VerticalAlignment="Top" Grid.Row="1"></StackPanel>
+            <TextBlock Height="32" HorizontalAlignment="Left" Margin="20,6,0,0" Style="{StaticResource BannerInlayTextOA}" Text="ON AIR" VerticalAlignment="Top" Width="394" Grid.ColumnSpan="2" Grid.RowSpan="2" />
         </Grid>
-        <ListBox x:Name="errorlist" Grid.Row="2" Background="LightGray" HorizontalAlignment="Left" Width="794" Height="80" VerticalAlignment="Bottom" />
+        <Image Margin="14,339,587,13" Source="/ContentManagerService;component/Images/ebu-logo-bn.png" Grid.RowSpan="3" />
+        <ListBox x:Name="errorlist" Grid.Row="2" Background="LightGray" HorizontalAlignment="Left" Width="794" Height="80" VerticalAlignment="Bottom" Visibility="Hidden" />
+        <Button Click="BClick_debug" Grid.Row="2" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="44" Content="debug"/>
+        <Button Grid.Row="1" Margin="633,56,46,1" Click="Button_Click_1" Visibility="Hidden">Test</Button>
+        <Button Grid.Row="1" Margin="507,56,167,1" Click="Button_Click_3">Open Data Folder</Button>
+        <Button Content="Show Available slides" HorizontalAlignment="Right" Margin="0,56,397,80" Width="130" Grid.Row="1" Grid.RowSpan="2" Click="Button_Click_2" />
     </Grid>
 </Window>

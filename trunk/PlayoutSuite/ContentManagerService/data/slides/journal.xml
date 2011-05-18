@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide link="http://www.rougefm.com/dab/salon-auto-2011/le-journal-du-salon.html">
+
+  
+    <background color="#EEEEEE" top="0" left="0"/>
+	
+    <img src="data\medias\DAB\rubriques_avec_audio\01_journal_salon.jpg" width="320"/>
+	
+	<template id="header-littlelogo"/>
+    <text content="@@@SHORTDATE@@@ @@@SHORTTIME@@@" bottom="20" left="10" font-style="bold" font-color="#FFFFFF"/>
+  </slide>
+</sequence>
