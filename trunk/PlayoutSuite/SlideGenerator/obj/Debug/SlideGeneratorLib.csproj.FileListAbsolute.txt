@@ -1,6 +1,0 @@
-D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\SlideGenerator\bin\Debug\SlideGenerator.dll.config
-D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\SlideGenerator\bin\Debug\SlideGenerator.dll
-D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\SlideGenerator\bin\Debug\SlideGenerator.pdb
-D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\SlideGenerator\obj\Debug\ResolveAssemblyReference.cache
-D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\SlideGenerator\obj\Debug\SlideGenerator.dll
-D:\HYBRIDDEMO\VSPRJ\PlayoutSuite\SlideGenerator\obj\Debug\SlideGenerator.pdb
