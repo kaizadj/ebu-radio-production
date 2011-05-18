@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<conf>
+  <includes>
+    <template src="data\templates.xml"/>
+	<slidefolder src="data\slides"/> <!-- slide folder -->
+  </includes>
+  <variables>
+    <stationname>EBU RADIO</stationname>
+    <stationweb>tech.ebu.ch</stationweb>
+    <currentshow>MORNING SHOW</currentshow>
+    <currentsong>Waka waka</currentsong>
+    <webcampic>\\192.168.1.131\IBCPlayout\DATA\tmp\webcam.jpg</webcampic>
+    <webcamtxt>COUCOU</webcamtxt>
+    <currentartist>Shakira</currentartist>
+    <nowplaying>@@@CURRENTARTIST@@@ - @@@CURRENTSONG@@@</nowplaying>
+    <header>@@@STATIONNAME@@@ - @@@STATIONWEB@@@   @@@DATE@@@ @@@TIME@@@</header>
+  </variables>
+  
+</conf>

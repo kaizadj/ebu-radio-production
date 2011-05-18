@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide link="http://www.rougefm.com/dab/salon-auto-2011/les-plus-belles-voitures-du-salon.html">
+
+    <background color="#EEEEEE" top="0" left="0"/>
+	
+    <img src="data\medias\DAB\rubriques_sans_audio\13_plus_belles_voitures.jpg"/>
+	
+	<imgrdm folder="data\medias\DAB\photos_belles_voitures\" width="150" top="95" left="160"/>
+	
+	<template id="header-littlelogo"/>
+    
+    
+  </slide>
+</sequence>

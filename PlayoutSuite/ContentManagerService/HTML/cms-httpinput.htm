@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                margin-left: 80px;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <h1>
+            Content Manager Service (CMS)</h1>
+        <h2>
+            HTTP Input</h2>
+        <p>
+            See <em>config file</em> to configure the http listener.</p>
+        <h3>
+            Test Url</h3>
+        <pre style="margin-left: 40px"><a 
+            href="http://localhost:port/command?key1=value|key2=value">http://localhost:port/command?key1=value|key2=value</a>
+</pre>
+        <p style="margin-left: 40px">
+            We assume that separator is the character |</p>
+        <h3>
+            Commands</h3>
+        <h4 style="margin-left: 40px">
+            update</h4>
+        <pre class="style2">example: http://localhost/<em><strong>update</strong></em>?CURRENTARTIST=Shakira|MYTXT=you%20are%20listening%20to%20@@@CURRENTARTIST@@@
+<p class="style2">
+            <em>
+            <strong>update </strong> </em>sets variables of CMS which 
+            are integrated in slides.<br />
+            This command allows recursion in the arguments. It means that you can define a 
+            variable with oder variables by calling it in the format: @@@VARNAME@@@ (see 
+            MYVAR above)</p>
+        <h4 style="margin-left: 40px">
+            broadcast</h4>
+        <p class="style2">
+            example: http://localhost/broadcast?BSLIDE=webcam</p>
+        <p class="style2">
+            <em><strong>broadcast</strong></em> is used with the parameter BSLIDE<br />
+        </p>
+        <h4 style="margin-left: 40px">
+            updateandbroadcast</h4>
+        <pre class="style2">example: <a 
+            href="http://localhost/updateandbroadcast?BSLIDE=webcam|WEBCAMPIC=C:/webcam.jpg">http://localhost/updateandbroadcast?BSLIDE=webcam|WEBCAMPIC=C:\webcam.jpg</a>
+<a href="http://localhost/updateandbroadcast?BSLIDE=nowplaying|CURRENTARTIST=Shakira">http://localhost/updateandbroadcast?BSLIDE=nowplaying|CURRENTARTIST=Shakira</a></pre>
+        <p class="style2">
+            <strong><em>updateandbroadcast </em></strong>sets variables and broadcast the 
+            slide BSLIDE. </p>
+        <h4 style="margin-left: 40px">
+            loadslidecart</h4>
+        <pre class="style2">example: <a 
+            href="http://localhost/loadslidecart?SLIDE1=onair|SLIDE2=clock|SLIDE3=ad1">http://localhost/loadslidecart?SLIDE1=onair|SLIDE2=clock|SLIDE3=ad1</a></pre>
+        <p class="style2">
+            This command sets the list of slides which are automatically and periodicaly 
+            broadcasted. The broadcast interval is defined in the <em>config file.</p>
+        <div style="float:left;margin:5px;">
+            <img src="http://radiodns1.ebu.ch/radiovismanager/img/ebulogo.png" 
+                style="width: 60px; height: 52px;" /></div>
+        <address>
+            EBU Innovation &amp; Technology, 2011<br />
+            EBU Radio Production Platform<br />
+            <a href="http://www.ebulabs.org/">ebulabs.org</a></address>
+        <p>
+            &nbsp;</p>
+	
+	</body>
+</html>

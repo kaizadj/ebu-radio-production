@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <style type="text/css">
+
+        .style1
+        {
+            margin-top: 19px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        Content Manager Service (CMS)</h1>
+    <h2>
+        Templates</h2>
+    <p class="style1">
+        When you want to add similar elements to several slides, you can create a 
+        template and just call it on each slide. </p>
+    <p class="style1">
+        The templates are defined in templates files.</p>
+    <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;templates&gt; 
+    &lt;template id=&quot;%templateID%&quot;&gt; 
+        &lt;!-- elements--&gt; 
+    &lt;/template&gt;
+    &lt;!-- other templates... --&gt;
+&lt;/templates&gt;</pre>
+    <p>
+        To call a template, just add this element:</p>
+    <pre>&lt;template id=&quot;%templateID%&quot;/&gt;</pre>
+    <pre>&lt;template id=&quot;header-littlelogo&quot;/&gt;</pre>
+    <p>
+        &nbsp;</p>
+                   <div style="float:left;margin:5px;">
+    <img src="http://radiodns1.ebu.ch/radiovismanager/img/ebulogo.png" 
+        style="width: 60px; height: 52px;" /></div>  <address>EBU Innovation & Technology, 2011<br />
+                EBU Radio Production Platform<br /><a href="http://www.ebulabs.org/">ebulabs.org</a></address>
+    
+    
+</body>
+</html>

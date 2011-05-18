@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide link="http://www.rougefm.com/dab/salon-auto-2011/horaires.html">
+
+
+    <background color="#EEEEEE" top="0" left="0"/>
+	
+    <img src="data\medias\DAB\rubriques_sans_audio\10_horaires_ouverture.jpg" width="320"/>
+	
+	<template id="header-littlelogo"/>
+    
+    
+  </slide>
+</sequence>

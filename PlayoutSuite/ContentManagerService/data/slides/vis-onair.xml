@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide link="http://www.rougefm.com/dab/salon-auto-2011/le-salon-c-est-aussi.html">
+
+    <background color="#EEEEEE" top="0" left="0"/>
+	
+    
+	
+    <img src="data\medias\DAB\rubriques_sans_audio\14_salon_insolite.jpg"/>
+	
+	<img src="@@@CURRENTPIC1@@@" width="150" top="95" left="160"/>
+	
+	<template id="header-littlelogo"/>
+    
+    
+  </slide>
+</sequence>

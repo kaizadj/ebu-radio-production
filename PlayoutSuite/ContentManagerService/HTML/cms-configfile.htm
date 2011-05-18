@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <style type="text/css">
+        .style1
+        {
+            margin-left: 80px;
+        }
+        .style2
+        {
+            margin-left: 160px;
+        }
+        .style3
+        {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Content Manager Service (CMS)</h1>
+    <h2>
+        Config File</h2>
+    <h3 style="margin-left: 40px">
+        Application</h3>
+    <pre style="margin-left: 40px">&lt;add key=&quot;TmpFolder&quot; value=&quot;D:\HYBRIDDEMO\DATA\tmp\&quot;/&gt; </pre>
+    <p class="style1">
+        TmpFolder is the folder used to generate the files.</p>
+    <p class="style1">
+        <br />
+    </p>
+    <pre style="margin-left: 40px">&lt;add key=&quot;DataFolder&quot; value=&quot;D:\HYBRIDDEMO\DATA\&quot;/&gt;</pre>
+    <p class="style1">
+        DataFolder specifies the folder which contains the data folders required by CMS.<br />
+        See Folder Structures<br />
+    </p>
+    <h3 style="margin-left: 40px">
+        Slides</h3>
+    <pre style="margin-left: 40px">&lt;add key=&quot;broadcastdelay&quot; value=&quot;5&quot;/&gt; 
+</pre>
+    <p class="style1">
+        broadcastdelay key specifies in seconds the default duration of a slide.</p>
+    <p class="style1">
+        &nbsp;</p>
+    <pre style="margin-left: 40px">&lt;add key=&quot;radiovislink&quot; value=&quot;http://tech.ebu.ch&quot;/&gt; 
+&lt;add key=&quot;radiovistxt&quot; value=&quot;Stay up to date: http://tech.ebu.ch/&quot;&gt;
+</pre>
+    <p class="style1">
+        radiovislink and radiovistxt keys are the default values of slides, if not 
+        specified in slides.</p>
+    <p class="style1">
+        &nbsp;</p>
+    <pre style="margin-left: 40px">&lt;add key=&quot;slidecartprefix&quot; value=&quot;%prefix%&quot;/&gt;</pre>
+    <p class="style1">
+        The slide cart will loaded with every slide beginning by %prefix%</p>
+    <p class="style1">
+        &nbsp;</p>
+    <h3 style="margin-left: 40px">
+        Input</h3>
+    <pre style="margin-left: 80px">&lt;add key=&quot;InputMethod&quot; value=&quot;<em><strong>#InputMethod</strong></em>&quot;/&gt;</pre>
+    <p style="margin-left: 80px">
+        <em><strong>#InputMethod</strong></em> is either <strong>WCFstrong>WCF</strong> HTTP</strong></p>
+    <p style="margin-left: 120px">
+        WCF is used when you want to synchronize the CMS with the EBU Radio Production 
+        Platform.</p>
+    <p style="margin-left: 120px">
+        HTTP is used when you want to send input values to update the variables of the 
+        CMS.      CMS.<br />
+        See HTTP updates parameters.</p>
+    <p style="margin-left: 120px">
+        &nbsp;</p>
+    <h3 style="margin-left: 40px">
+        Output</h3>
+    <h4 style="margin-left: 80px">Stomp</h4>
+    <pre style="margin-left: 120px">&lt;add key=&quot;stompServer&quot; value=&quot;<em><strong>#stompServer</strong></em>&quot;/&gt; 
+&lt;add key=&quot;stompPort&quot; value=&quot;<em><strong>#stompPort</strong></em>&quot;/&gt; 
+&lt;add key=&quot;stompLogin&quot; value=&quot;<em><strong>#stompLogin</strong></em>&quot;/&gt; 
+&lt;add key=&quot;stompPasscode&quot; value=&quot;<em><strong>#stompPasscode</strong></em>&quot;/&gt; 
+&lt;add key=&quot;stompHttpUrl&quot; value=&quot;<em><strong>#stompHttpUrl</strong></em>&quot;/&gt&quot;/&gt; </pre>
+    <p class="style2">
+        <em><strong>#stompServer</strong></em>: The server address<br />
+        <em><strong>#stompPort</strong></em>: The server port<br />
+        <em><strong>#stompLogin</strong></em>: The server login<br />
+        <em><strong>#stompPasscode</strong></em>: The server password<br />
+        <em><strong>#stompHttpUrl</strong></em>: The url to the folder where the 
+        generated image is available from receivers.</p>
+    <p class="style2">
+        <br />
+    </p>
+    <pre style="margin-left: 120px">&lt;add key=&quot;stompTopicCount&quot; value=&quot;#numberOfTopics&quot;/&gt;
+&lt;add key=&quot;stompTopic#N&quot; value=&quot;<em><strong>#topic</strong></em>&quot;/&gt; </pre>
+    <p style="margin-left: 120px">
+        <em class="style3"><strong>#topic</strong></em>: example <em>/topic/dab/4e1/4fff/4000/0/<br />
+        </em></p>
+    <h4 style="margin-left: 80px">
+        FTP</h4>
+    <pre style="margin-left: 120px">&lt;add key=&quot;ftpCount&quot; value=&quot;g>#ftpCount</strong></em>&quot;/&gt;</pre>
+    <p style="margin-left: 120px">
+        <em class="style3"><strong>#ftpCount</strong></em>: It&#39;s: It&#39;s the number of ftp parameter&#39;s set.</p>
+    <p style="margin-left: 120px">
+        <br />
+    </p>
+    <pre style="margin-left: 120px">&lt;add key=&quot;ftpServerg>#N</strong></em>&quot; value=&quot;<em>ftp://yourserver/folder/</em>&quot;/&gt; 
+&lt;add key=&quot;ftpUser<em><strong>#N</strong></em>&quot; value=&quot;<em>ftpuser</em>&quot;/&gt; 
+&lt;add key=&quot;ftpPwd<em><strong>#N</strong></em>&quot; value=&quot;<em>ftppassword</em>&quot;/&gt; 
+&lt;add key=&quot;ftpAlone<em><strong>#N</strong></em>&quot; value=&quot;<em><strong>#ftpAlone</strong></em>&quot;/&gt; 
+&lt;add key=&quot;ftpMinPeriod<em><strong>#N</strong></em>&quot; value=&quot;<em><strong>#ftpMinPeriod</strong></em>&quot;/&gt&quot;/&gt;</pre>
+    <p style="margin-left: 120px">
+        <em class="style3"><strong>#N</strong></em> represents an integer from 1 to N for each 
+        parameter&#39;s set</p>
+    <p class="style2">
+        <em><strong>#ftpAlone</strong></em>: Used for DAB implementation of the link. It 
+        specifies if it has to call exiftool.<br />
+        <br />
+        <em><strong>#ftpMinPeriod</strong></em>: Define a minimum time limit to upload 
+        generated picture. 
+        (in seconds)<br />
+        (! Be carefull because, it can skip some pictures)<br />
+    </p>
+       <p class="style3"> &nbsp;</p>
+
+           <div style="float:left;margin:5px;">
+    <img src="http://radiodns1.ebu.ch/radiovismanager/img/ebulogo.png" 
+        style="width: 60px; height: 52px;" /></div>  <address>EBU Innovation & Technology, 2011<br />
+                EBU Radio Production Platform<br /><a href="http://www.ebulabs.org/">ebulabs.org</a></address>
+    
+</body>
+</html>

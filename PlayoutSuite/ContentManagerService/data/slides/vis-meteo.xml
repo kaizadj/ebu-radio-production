@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence>
+  <slide>
+
+
+
+
+    <background color="#EEEEEE" top="0" left="0"/>
+	
+    <imgrdm folder="data\medias\DAB\meteo\today\" width="320"/>
+	
+	<template id="header-littlelogo"/>
+    
+    
+
+  </slide>
+</sequence>
