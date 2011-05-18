@@ -15,26 +15,27 @@ using System.Net;
 
 namespace SlideGeneratorLib.Rendering
 {
-    class ImgRender:ARender
+    class ImgRandomRender:ARender
     {
-        public ImgRender(Dictionary<string, string> dic) : base("img") { this.dictionary = dic; }
+        public ImgRandomRender(Dictionary<string, string> dic) : base("imgrdm") { this.dictionary = dic; this.rand = new Random(DateTime.Now.Second); }
         private Dictionary<string, string> dictionary;
+        private Random rand;
         public override void draw(XElement field, Canvas c)
         {
             DateTime n = DateTime.Now;
-            if (field.Attribute("src") != null)
+            if (field.Attribute("folder") != null)
             {
                 System.Windows.Controls.Image box = new System.Windows.Controls.Image();
                 RenderOptions.SetBitmapScalingMode(box, BitmapScalingMode.Fant);
-                String path = VarParser.parseText(field.Attribute("src").Value, dictionary);
-                String exactpath = fileexists(path);
+                String path = VarParser.parseText(field.Attribute("folder").Value, dictionary);
+                String exactpath = folderexists(path);
                 Console.WriteLine("PATH : --- " + exactpath);
                 if (exactpath != "-1")
                 {
                     Console.WriteLine("FILE OK");
                     try
                     {
-                        Console.WriteLine("IMG: " + exactpath + " path:" + path);
+                        Console.WriteLine("RDMIMG: " + exactpath + " path:" + path);
                         if (exactpath.StartsWith("http://"))
                         {
                             String filename=System.Configuration.ConfigurationSettings.AppSettings["TmpFolder"] + "test-"+DateTime.Now.ToFileTime()+".jpg";
@@ -51,12 +52,11 @@ namespace SlideGeneratorLib.Rendering
                                         Uri u = new Uri(filename, UriKind.RelativeOrAbsolute);
                                         BitmapImage i = new BitmapImage(u);
                                         
-
                                         box.Source = i;
-                                        
                                         box.Stretch = System.Windows.Media.Stretch.Fill;
+
                                         
-                                        
+
                                         addToCanvas(field, box, c);
                                         File.Delete(filename);
                                         Console.WriteLine("ok");
@@ -69,7 +69,6 @@ namespace SlideGeneratorLib.Rendering
                                          Console.WriteLine("Error downloading file " + exactpath + " to " + filename);
                                          Console.WriteLine(e.Message);
                                     }
-
                                 }
                             }
                             catch(Exception e)
@@ -107,7 +106,35 @@ namespace SlideGeneratorLib.Rendering
                 Console.WriteLine("Component " + field.Value + " generated in " + DateTime.Now.Subtract(n).TotalMilliseconds + "ms");
             }
         }
+        private String folderexists(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                
+                String[] files = Directory.GetFiles(System.IO.Path.GetFullPath(path));
+                //path = System.IO.Path.GetFullPath(path);
+                if (files.Length > 0)
+                {
+                    int n = rand.Next(files.Length);
 
+                    String file = files[n];
+                    if (file != "" && file != null) return file;
+                    else return "-1";
+                }
+                else
+                {
+                    Console.WriteLine("[IMGRDM] folder empty");
+                    return "-1";
+                }
+            }
+            else
+            {
+                Console.WriteLine("[IMGRDM] folder not found");
+                return "-1";
+            }
+
+           
+        }
         private String fileexists(string path)
         {
             if (path.IndexOf("http://") == 0)

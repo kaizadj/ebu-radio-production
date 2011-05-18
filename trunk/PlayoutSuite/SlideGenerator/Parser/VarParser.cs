@@ -7,9 +7,9 @@ using SlideGeneratorLib.Exceptions;
 
 namespace SlideGeneratorLib.Parser
 {
-    class VarParser
+    public class VarParser
     {
-        internal static String parseText(String str, Dictionary<String, String> dic)
+        public static String parseText(String str, Dictionary<String, String> dic)
         {
             while (str.IndexOf("@@@") != -1)
             {
