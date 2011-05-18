@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using SlideGeneratorLib.Rendering;
 using SlideGeneratorLib.Parser;
 using System.Threading;
+using System.Deployment.Application;
 
 namespace SlideGeneratorLib
 {
@@ -45,7 +46,9 @@ namespace SlideGeneratorLib
             try
             {
                 this.config = XElement.Load(urlconfig);
-                this.tmpfolder = config.Attribute("tmpfolder").Value;
+                this.tmpfolder = System.Configuration.ConfigurationSettings.AppSettings["TmpFolder"];
+                if(!Directory.Exists(tmpfolder) && ApplicationDeployment.IsNetworkDeployed)
+                        slidefolder = ApplicationDeployment.CurrentDeployment.DataDirectory + "\\" + slidefolder;
                 Console.WriteLine("TMP FOLDER: " + this.tmpfolder);
                 //loadRenderingConfig();
                 init();
@@ -54,24 +57,28 @@ namespace SlideGeneratorLib
             }
             catch (Exception er)
             {
+
+                MessageBox.Show("Unable to open " + urlconfig + "");
                 Console.WriteLine("Unable to open " + urlconfig + "");
             }
         }
 
         private void init()
         {
-            loadConstants();
+            loadVariables();
             Console.WriteLine("Loading text tag");
             this.newTag("text", new TextRender(this));
             Console.WriteLine("Loading img tag");
             this.newTag("img", new ImgRender(this.cstlist));
+            Console.WriteLine("Loading imgrdm tag");
+            this.newTag("imgrdm", new ImgRandomRender(this.cstlist));
             Console.WriteLine("Loading background tag");
             this.newTag("background", new BackgroundRender());
             Console.WriteLine("Loading template tag");
             this.newTag("template", new TemplateRender());
         }
 
-        private void loadConstants()
+        private void loadVariables()
         {
 
             try
@@ -80,10 +87,10 @@ namespace SlideGeneratorLib
                 VarParser.XMLrequire(config, "conf");
                 IEnumerable<XElement> elements =
                 from el in config.Elements()
-                where el.Name == "constants"
+                where el.Name == "variables"
                 select el;
                 XElement econf = elements.First();
-                VarParser.XMLrequire(econf, "constants");
+                VarParser.XMLrequire(econf, "variables");
 
 
                 List<XElement> vars = econf.Elements().ToList();
@@ -162,6 +169,10 @@ namespace SlideGeneratorLib
                     slidefolder = elements.First().Attribute("src").Value.ToString();
                     if (slidefolder.Last() != '\\')
                         slidefolder = slidefolder + "\\";
+
+
+                    if (!Directory.Exists(slidefolder) && ApplicationDeployment.IsNetworkDeployed)
+                        slidefolder = ApplicationDeployment.CurrentDeployment.DataDirectory + "\\" + slidefolder;
                     Console.WriteLine("NEW SlideFolder: " + slidefolder);
                 }
 
@@ -174,15 +185,19 @@ namespace SlideGeneratorLib
         }
 
         /// <summary>
-        /// 
+        /// Generate slide "name" and return a canvas containing the graphical slide
         /// </summary>
         /// <param name="name">slide key for slides Dictionary (if name contains a "." interpreted as an url)</param>
         /// <returns></returns>
-        public Canvas loadXMLSlide(String name)
+        public SlideResult loadXMLSlide(String name)
         {
+
             DateTime n = DateTime.Now;
             Canvas c = new Canvas();
             String url="";
+            String textresult = "Text Result ...";
+            String link = "";
+
             Console.WriteLine("search for :" + name);
             try
             {
@@ -191,6 +206,7 @@ namespace SlideGeneratorLib
                 else
                     url = slides[name];
             }
+            
             catch { return null;  }
             Console.WriteLine("search ok!");
             c.Width = this.cWidth;
@@ -210,13 +226,15 @@ namespace SlideGeneratorLib
 
             VarParser.XMLrequire(e, "sequence");
 
-
-            Console.WriteLine(e.Elements().Count());
             List<XElement> slideList = e.Elements().ToList();
 
             for (int i = 0; i < slideList.Count; i++)
             {
 
+                XAttribute a = slideList.ElementAt(i).Attribute("link");
+                if (a != null)
+                    link = a.Value;
+                
                 List<XElement> elementList = slideList.ElementAt(i).Elements().ToList();
                 Console.WriteLine("slide " + i + " has " + elementList.Count + " elements");
                 for (int j = 0; j < elementList.Count; j++)
@@ -240,7 +258,7 @@ namespace SlideGeneratorLib
             c.Clip = r;
             Console.WriteLine("Slide " + name + " generated in "+DateTime.Now.Subtract(n).TotalMilliseconds+"ms");
 
-            return c;
+            return new SlideResult(name, url, c, textresult, link);
         }
 
         private void drawXElement(XElement e, Canvas c)
@@ -288,9 +306,10 @@ namespace SlideGeneratorLib
 
         }
 
-        public void saveToJpg(UIElement source, String filename)
+        public void saveToJpg(UIElement source, String filename, String link, int quality=100)
         {
-            
+            this.saveToJpg(source, filename, link, true, quality);
+            /*
             source.Measure(new System.Windows.Size(320.0, 240.0));
             source.Arrange(new System.Windows.Rect(0.0, 0.0, 320.0, 240.0));
             RenderTargetBitmap rtbImage = new RenderTargetBitmap(320,
@@ -302,6 +321,7 @@ namespace SlideGeneratorLib
 
             JpegBitmapEncoder encoder = new JpegBitmapEncoder();
             
+
             BitmapFrame outputFrame = BitmapFrame.Create(rtbImage);
             encoder.Frames.Add(outputFrame);
             encoder.QualityLevel = 100;
@@ -315,9 +335,49 @@ namespace SlideGeneratorLib
             catch
             {
                 Console.WriteLine("Error writting files");
-            }
+            }*/
         }
 
+        public void saveToJpg(UIElement source, string filename, String link, bool include_exif, int quality=100)
+        {
+            source.Measure(new System.Windows.Size(320.0, 240.0));
+            source.Arrange(new System.Windows.Rect(0.0, 0.0, 320.0, 240.0));
+            RenderTargetBitmap rtbImage = new RenderTargetBitmap(320,
+               240,
+               96,
+               96,
+               PixelFormats.Pbgra32);
+            rtbImage.Render(source);
+
+
+
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+
+         /*   String v = "http://radiodns1.ebu.ch/";
+            BitmapMetadata m = new BitmapMetadata("jpg");
+            //m.Comment = v; 37510
+            m.SetQuery("/app1/ifd/exif:{uint=270}", v);*/
+            //BitmapFrame outputFrame = BitmapFrame.Create(rtbImage, rtbImage, m, null);
+            BitmapFrame outputFrame = BitmapFrame.Create(rtbImage);
+            
+            
+
+            //outputFrame.Metadata.set
+            encoder.Frames.Add(outputFrame);
+            encoder.QualityLevel = quality;
+            
+            try
+            {
+                using (FileStream file = File.OpenWrite(filename))
+                {
+                    encoder.Save(file);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error writting files\n"+e.Message);
+            }
+        }
 
         public List<string> getAvailableSlides()
         {
@@ -346,7 +406,6 @@ namespace SlideGeneratorLib
        
         public string getVar(string key)
         {
-
             key = key.ToUpper();
             try
             {
@@ -355,6 +414,8 @@ namespace SlideGeneratorLib
             catch { Console.WriteLine(key +" not found"); }
             return "-- error --";
         }
+
+
     }
 }
 

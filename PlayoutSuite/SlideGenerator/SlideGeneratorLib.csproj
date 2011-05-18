@@ -50,6 +50,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,12 +66,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Render\ARender.cs" />
     <Compile Include="Render\BackgroundRender.cs" />
+    <Compile Include="Render\ImgRandomRender.cs" />
     <Compile Include="Render\ImgRender.cs" />
     <Compile Include="Render\IRenderable.cs" />
     <Compile Include="Render\TemplateRender.cs" />
     <Compile Include="Render\TextRender.cs" />
     <Compile Include="SlideGenerator.cs" />
     <Compile Include="Exceptions\XMLSynthaxErrorException.cs" />
+    <Compile Include="SlideResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
